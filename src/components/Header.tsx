@@ -1,5 +1,6 @@
 import Link from "next/link"
 import {FaUserCircle} from 'react-icons/fa'
+import {MdDarkMode} from 'react-icons/md'
 
 const Header = () => {
   return (
@@ -9,15 +10,33 @@ const Header = () => {
                 Rubikon
             </Link>
             <ul className="flex items-center ml-5">
-                <Link href={'/auth'}>
-                    <span className='cursor-pointer'>
-                    <FaUserCircle />
-                    </span>                
-                </Link>
+                <li className="flex items-center">
+                    <Link href={'/auth'}>
+                        <span className='cursor-pointer'>
+                        <FaUserCircle />
+                        </span>                
+                    </Link>
+                </li>
+                <li className="ml-2">
+                    <span>
+                    <MdDarkMode />
+                    </span>                    
+                </li>                
             </ul>
         </div>
 
-        <ul></ul>
+        <ul className='flex items-center justify-between w-full md:w-1/3 mt-4'>
+            <li className='hover:-translate-y-2 duration-500 transition-all'>
+                <Link href='/'>Home</Link>
+            </li>
+            <li className='hover:-translate-y-2 duration-500 transition-all'>
+                <Link href='/rooms'>Rooms</Link>
+            </li>
+            <li className='hover:-translate-y-2 duration-500 transition-all'>
+                {/* Create contact page */}
+                <Link href='/'>Contact</Link>
+            </li>
+        </ul>
     </header>
   )
 }
